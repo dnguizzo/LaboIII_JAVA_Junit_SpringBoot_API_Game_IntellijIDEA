@@ -1,0 +1,24 @@
+
+Nuevos ejercicios
+de Hernán Jesús Morais - viernes, 31 de marzo de 2023, 19:06
+Número de respuestas: 0
+
+Buenas tardes estimados, vi que muchos ya estuvieron ejecutando el primer ejercicio, felicitaciones!!
+
+Para avanzar con la practica, les he habilitado 3 ejercicios más... En estos el nivel de dificultad no se incrementa, pero demanda de ustedes investigar sobre el correcto uso de la clase Scanner y algunas otras cosas.
+
+He puesto como fecha límite el miércoles a las 23:00 Hs para que si surgen dudas las podamos ver en clases. Aquí les dejo los links:
+
+    https://classroom.github.com/a/F3bkyBT5
+    https://classroom.github.com/a/-6V9ZI98
+    https://classroom.github.com/a/WzuBKv3O
+
+Les remarco algunas cosas que vi sobre la primera asignación:
+
+    Si no suben el código a github (push) no veré la solución...
+    Específicamente la asignación dice que NO CIERREN EL PR NI LO MERGEN, por favor atención a esto.
+    Las consultas sobre los ejercicios las pueden hacer sobre el mismo código con github, usen la herramienta y procuren mencionarme (@ arrobarme) así me llega un mensaje.
+
+Buen fin de semana.
+
+Happy Coding!!

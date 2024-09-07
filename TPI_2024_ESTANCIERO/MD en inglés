@@ -1,0 +1,283 @@
+Semana 1
+Actividad
+
+    Entregar un documento en formato markdown en el repositorio, en la carpeta /docs, con todas las clases base detectadas como necesarias para resolver el problema, con sus atributos, métodos y responsabilidades. Entregar un modelo DER con todas sus entidades completas.
+
+Featured Classes
+
+    1. Box (abstract)
+
+Box Attributes
+
+    box_number (Int)
+    box_type(Int)
+    asoc_asset (Asset)
+    box_state (Int) (purchased, available, etc)
+    player_list (ArrayList(Player))
+
+Box Methods
+
+    action (abstract)
+
+        Box Subclasses (extended from Box)
+
+    1.1 StartingBox
+    1.2 TaxBox
+    1.3 RancherPriceBox
+    1.4 DestinyBox
+    1.5 PoliceStationBox
+    1.6 RestBox
+    1.7 FreeParkingBox
+    1.8 PrisonerBox
+    1.9 LuckBox
+    1.10 ZoneBox
+    1.11 CompanyBox
+    1.12 RailwayBox
+
+Responsabilities
+
+    Shoot the correspondent abstract action method, redefined in each sublclass, related to the box type.
+    Contain a players list that are in box at play tyme.
+
+    2. Board
+
+Board Attributes
+
+    box_list (ArrayList(Box))
+    luck_card_list (ArrayList(Card))
+    destiny_card_list (ArrayList(Card))
+
+Board Methods
+
+    showBoardInfo
+
+Board Responsabilities
+
+    Contain the list of boxes
+    Contain the list of luck and destiny cards, in a determinated order at play time.
+    Show information about board, players location for example.
+
+    3. Dice
+
+Dice Attributes
+
+    first_dice (int)
+    second_dice (int)
+
+Dice Methods
+
+    randomDice.
+
+Dice Responsabilities
+
+    calculate a random for each dice, each time is required. Save in each dice the value resultant.
+
+    4. Game
+
+Game Attributes
+
+    game_id (int)
+    player_list (ArrayList(Player))
+    allow_win_total (Boolean)
+    max_total (int)
+    game_state (int) (endeing, playing, ended)
+    game_turn (int)
+
+Game Methods
+
+    configureGame
+    newGame
+    loadGame
+    finishGame
+    saveGame
+    infoGame
+    setTurn
+
+Game Responsabilities
+
+    Manage all actions game, including new games, loading, saving and finishing.
+    Keeps the current game state, including, turns, players with assets and money and other variables.
+    Show game information when required.
+
+    5. Participant (abstract)
+
+Participant Attributes
+
+    money (Int)
+    provinces_list (ArrayList (Province))
+    company_list (ArrayList (Company))
+    railway_list (ArrayList (Railway))
+
+Participant Methods
+
+    pay (abstract)
+    collect (abstract)
+    buyProperty(abstract)
+    sellProperty (abstract)
+    buyFarm (abstract)
+    sellFarm (abstract)
+    buyRanch (abstract)
+    sellRanch (abstract)
+    showParticipantInfo (abstract)
+
+Participan Subclasses (extended from Participant)
+
+        5.1 Player
+
+Player Attributes (aditional to Participant)
+
+    player_id (Int)
+    player_name (String)
+    player_type (Int) (virtual or real)
+    player_profile (Int) (conservative, moderate, agressive).
+    board_position (Box)
+    prisoner (Boolean)
+    wait_turn_count (Int)
+    doube_dice_count (Int)
+    want_keep (boolean)
+    mortgage_value (Int)
+    player_state (Int) (playing, left, broken)
+
+Player Methods (aditional to Participant)
+
+    throwDice
+    movePosition
+    leftGame
+
+Player Responsabilities
+
+    Manage turn actions, like thow dice, buy or sell properties, farms or ranchs.
+    Left the game.
+    Move its position in board.
+
+        5.2 Bank
+
+Bank Attributes (aditional to Participant)
+
+    farm_count (Int)
+    ranch_count (Int)
+
+Bank Methods (aditional to Participant)
+
+    mortgage
+
+Bank Responsabilities
+
+    Keep a stock of money, farms and ranchs
+    Buy and sell properties to players when required.
+    Mortgage properties when necessary.
+
+    6. Asset (Abstract)
+
+Asset Attributes
+
+    asset_id (Int)
+    detail (String)
+    asset_value (Int)
+    owner (Int)
+    mortgage (boolean)
+    mortgage_value (Int)
+
+Asset Methods
+
+    calculateRent (abstract)
+    showAssetInfo
+
+Asset Responsabilities
+
+    Calculate the rent value of the asset, and show information about asset.
+
+Asset Subclasses (Extended from Asset)
+
+        6.1 Field (Extended from Asset)
+
+Field Attributes (aditionals to Asset)
+
+    zone (Int)
+    province (Int)
+    farms (Int)
+    ranch (Boolean)
+    farm_value (Int)
+    ranch_value (Int)
+    rent_field_value (Int)
+    rent_field_value_1F (Int)
+    rent_field_value_2F (Int)
+    rent_field_value_3F (Int)
+    rent_field_value_4F (Int)
+    rent_field_value_1R (Int)
+
+Field Methods (aditionals to Asset)
+Field Responsabilities
+
+    Save info about Field
+
+        6.2 Company (Extended from Asset)
+
+Company Attributes (aditionals to Asset)
+
+    value_having_1 (Int)
+    value_having_2 (Int)
+    value_having_2 (Int)
+
+Company Methods (aditionals to Asset)
+Company Responsabilities
+
+    Save info about Company
+
+        6.3 Railway (Extended from Asset)
+
+Railway Attributes (aditionals to Asset)
+
+    value_having_1 (Int)
+    value_having_2 (Int)
+    value_having_2 (Int)
+
+Railway Methods (aditionals to Asset)
+Railway Responsabilities
+
+    Save info about Railway
+
+7. Cards
+Card Attributes
+
+    card_id (Int)
+    Description (String)
+    actionList (ArrayList(ActionCard))
+
+Card Methods
+
+    executeCardAction
+
+Card Responsabilities
+
+    Execute each one of the actions in actionList attribute, in accord to the card type
+
+8. CardAction
+CardAction Attributes
+
+    action_id (Int)
+    action_type (Int)
+    action_value (Int)
+    action_quantity (Int)
+    action_recipient (Int)
+
+CardAction Methods
+Card Acion Responsabilities
+
+    Save actions and its values and recipients
+
+9. Province
+Attributes
+
+    province_id (Int)
+    name (String)
+    field_list (ArrayList(Field))
+    owner (Player)
+
+Province Methods
+
+    ownerAssign
+
+Province Responsabilities
+
+    Containing a list of fields, and assign a owner when necessary.

@@ -1,0 +1,108 @@
+
+LINK DISCORD
+https://discord.com/channels/1225515598491156564/1225515598944145592
+
+DER
+https://lucid.app/lucidchart/6eb5e65b-c1d0-476a-bf24-a2781db8aa34/edit?invitationId=inv_2290f20e-e92b-4810-8972-e66fbb96a679&page=0_0#
+
+FLUJO 
+https://lucid.app/lucidchart/479fdaa4-9361-4518-bd43-47c4cfaedceb/edit?invitationId=inv_f34e750d-d680-4f16-a6a1-c96d46d50d39&page=0_0#
+
+REPOSITORIO TP
+https://github.com/LCIII-2024/tpi-grupo15
+
+Ramas propias desde week04
+feature/113196-DDL
+feature/113196-Box-class
+
+
+
+Maximiliano Oliva
+ — 
+hoy a las 19:23
+Model/Interface/ICard.class
+Model/Card/DestinyCard.class
+Sergio Galiano
+ — 
+hoy a las 19:30
+Convenciones de Escritura
+
+Lenguaje Java:
+Idioma: todo en inglés salvo los menús y mensajes al usuario.
+Clases: PascalCase (la primera con mayúscula): Ej: Card
+Métodos: camelCase Ej. executeCard
+Variables: camelCase Ej: cardType
+
+SQL
+Nombres de tablas: MAYUSCULAS Y EN PLURAL
+Nombres de campos: snake_case
+
+Estructura:
+Colocar las interfaces dentro de la carpeta Interfaces
+Colocar las clases dentro de la carpeta correspondiente.
+Maximiliano Oliva
+ — 
+hoy a las 19:35
+tengo un problema con el discord parece
+ahora lo reinicio
+Sergio Galiano
+ — 
+hoy a las 20:30
+CREAR BRANCHES DE SQL COMO feature/n_legajo-DDL
+CREAR BRANCHES SOBRE feture/week04
+Maximiliano Oliva
+ — 
+hoy a las 20:31
+feature/week04
+Sergio Galiano
+ — 
+hoy a las 20:32
+Hcer PR a week una vez terminado el script en la rama de cada uno
+Maximiliano Oliva
+ — 
+hoy a las 20:42
+Recordar usar las classes wrapper (envoltorios) para los tipos de datos EJ:
+int -> Integer
+char -> Character
+boolean -> Boolean
+despues agrego esto al archivo de convenciones
+Maximiliano Oliva
+ — 
+hoy a las 20:44
+@everyone
+
+
+
+PATRONES DE DISEÑO
+
+Singleton:
+
+Agregaría que se puede aplicar a la clase de dados ya que solamente se crea una sola vez en todo el juego.
+
+
+¡Claro! Los patrones de diseño son soluciones probadas y comunes a problemas de diseño de software. Ayudan a escribir código más eficiente, mantenible y escalable. Aquí tienes algunos patrones de diseño que podrían ser útiles para tu programa de Java basado en el juego “El Estanciero”:
+
+Patrón Singleton: Este patrón asegura que una clase tenga una única instancia y proporciona un punto de acceso global a dicha instancia. Puede ser útil para representar elementos únicos en el juego, como el tablero o el mazo de cartas1.
+Patrón Factory Method: Proporciona una interfaz para la creación de objetos en una superclase, permitiendo a las subclases alterar el tipo de objetos que se crearán. Puedes usarlo para crear diferentes tipos de jugadores o elementos del juego1.
+Patrón Strategy: Permite definir una familia de algoritmos, encapsular cada uno y hacerlos intercambiables. Puedes aplicarlo para manejar diferentes estrategias de juego, como la estrategia de compra o la estrategia de movimiento de los jugadores2.
+Patrón Template Method: Define la estructura básica de un algoritmo en una superclase, pero permite que las subclases implementen pasos específicos. Útil para definir el flujo general del juego y permitir que las partes específicas se implementen en las subclases3.
+Patrón State: Permite que un objeto cambie su comportamiento cuando su estado interno cambia. Puedes usarlo para gestionar los diferentes estados del juego, como “en curso”, “pausado” o "finalizado"4.
+Patrón Decorator: Permite agregar funcionalidad a objetos existentes de manera dinámica. Útil para agregar características adicionales a los elementos del juego, como efectos especiales o mejoras2.
+Patrón Observer: Define una dependencia uno a muchos entre objetos, de modo que cuando un objeto cambia de estado, todos sus observadores son notificados y actualizados automáticamente. Puedes aplicarlo para manejar eventos del juego, como cambios en el tablero o en las cartas1.
+
+Iterador para la lista de cajas (Box):
+Crea una interfaz Iterator con métodos como hasNext() y next().
+Implementa una clase BoxIterator que implemente esta interfaz y recorra la lista de cajas.
+En la clase Board, proporciona un método para obtener una instancia de BoxIterator para recorrer las cajas.
+Iterador para las cartas de suerte y destino (Card):
+Sigue el mismo enfoque que con las cajas.
+Implementa una clase CardIterator para recorrer las listas de cartas.
+Iterador para los jugadores (Player):
+Si necesitas recorrer la lista de jugadores, puedes aplicar un iterador similar.
+Esto te permitirá ocultar la estructura interna de la lista de jugadores y proporcionar una forma más segura de recorrerla.
+Recuerda que el patrón Iterator te ayudará a mantener la encapsulación y a proporcionar una interfaz uniforme para recorrer diferentes colecciones de objetos. ¡Buena elección! 😊
+
+
+
+
+

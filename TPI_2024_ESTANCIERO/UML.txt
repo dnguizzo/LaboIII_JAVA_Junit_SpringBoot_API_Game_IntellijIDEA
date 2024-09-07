@@ -1,0 +1,79 @@
+// El Estanciero Diagram
+// -------------------
+
+//Tablero
+[Tablero]
+
+//Casillas
+[<<Abstract>>Casilla]
+[Tablero]++1-42>[Casilla]
+
+//Comisaria
+[Comisaria]
+[Comisaria]^[Casilla]
+
+//Descanso
+[Descanso]
+[Descanso]^[Casilla]
+
+//Estacionamiento Libre
+[EstacionamientoLibre]
+[EstacionamientoLibre]^[Casilla]
+
+//Marche Preso
+[MarchePreso]
+[MarchePreso]^[Casilla]
+
+// -------------------
+
+//Tarjeta
+[<<Abstract>>Tarjeta]
+[Tarjeta]-.-[note: No termino de imaginar como implementar las acciones]
+
+//Escritura 28
+[Escritura]
+[Escritura]^[Tarjeta]
+
+//Suerte 16
+[Suerte]
+[Suerte]^[Tarjeta]
+
+//Destino 16
+[Destino]
+[Destino]^[Tarjeta]
+
+// -------------------
+
+//Billetes
+[Billete]
+
+// -------------------
+
+//Propiedades
+[<<Abstract>>Propiedad]
+
+//Campo
+[Campo]
+[Campo]^[Propiedad]
+
+//Compañia
+[Compania]
+[Compania]^[Propiedad]
+
+//Ferrocarril
+[Ferrocarril]
+[Ferrocarril]^[Propiedad]
+// -------------------
+
+//Jugador
+[<<Abstract>>Jugador]
+
+//Bot
+[Bot]^[Jugador]
+
+//Persona
+[Persona]^[Jugador]
+
+//Banco
+[Banco]
+[Banco]^[Jugador]
